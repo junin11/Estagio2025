@@ -1,0 +1,52 @@
+#define motorEsquerda OUT_B
+#define motorDireita  OUT_C
+#define sensorSonar   IN_1
+
+const int LIMIAR_DETECCAO = 40;       // Distância para detectar adversário
+const int MARGEM_VARIACAO = 3;        // Variação para considerar alinhamento
+const int VELOCIDADE_GIRO = 50;
+const int VELOCIDADE_ATAQUE = 100;
+const int TEMPO_LEITURA = 100;        // Intervalo de leitura do sonar
+
+task main() {
+    SetSensorLowspeed(sensorSonar);   // Configura o sensor ultrassônico
+    Wait(3000);                        // Aguarda 3 segundos antes de iniciar
+
+    while(true) {
+        int distancia = SensorUS(sensorSonar);
+
+        if (distancia <= LIMIAR_DETECCAO && distancia > 0) {
+            // Rastrear e atacar
+            int d1 = SensorUS(sensorSonar);
+            Wait(TEMPO_LEITURA);
+            int d2 = SensorUS(sensorSonar);
+            int variacao = d2 - d1;
+
+            if (abs(variacao) <= MARGEM_VARIACAO) {
+                // Está alinhado → ataque em linha reta
+                OnRev(motorEsquerda, VELOCIDADE_ATAQUE); // Invertido para andar pra frente
+                OnRev(motorDireita, VELOCIDADE_ATAQUE);  // Invertido para andar pra frente
+                Wait(1500);
+                Off(OUT_BC);
+            }
+            else if (variacao > 0) {
+                // Gira para a direita
+                OnRev(motorEsquerda, VELOCIDADE_GIRO); // gira pra direita
+                OnFwd(motorDireita, VELOCIDADE_GIRO);
+                Wait(200);
+                Off(OUT_BC);
+            }
+            else {
+                // Gira para a esquerda
+                OnFwd(motorEsquerda, VELOCIDADE_GIRO);
+                OnRev(motorDireita, VELOCIDADE_GIRO); // gira pra esquerda
+                Wait(200);
+                Off(OUT_BC);
+            }
+        } else {
+            // Busca inimigo girando em sentido horário
+            OnFwd(motorEsquerda, VELOCIDADE_GIRO);
+            OnRev(motorDireita, VELOCIDADE_GIRO);
+        }
+    }
+}
