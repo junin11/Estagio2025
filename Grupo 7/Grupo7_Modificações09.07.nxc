@@ -1,0 +1,118 @@
+//==============================================================================
+//===| TAMANDUTECH EQUIPE DE ROB�TICA  |========================================
+//===|          EST�GIO 2024           |========================================
+//===|       C�DIGO DE EXEMPLO         |========================================
+//==============================================================================
+
+/* Este c�digo funciona de maneira que o rob� possa se movimentar atrav�s dos motores A e C
+Gire no pr�prio eixo para a esquerda com 50% da pot�ncia at� que identifique um advers�rio a menos de 35cm.
+Uma vez identificado, o rob� andar� para frente em velocidade m�xima at� que a luta acabe ou ele perca o advers�rio de vista.
+
+O intuito do desafio � adaptar o c�digo ao rob� de voc�s, adicionar movimenta��o inicial na fun��o pr� definida e realizar ajustes
+na velocidade dos motores conforme forem necess�rios
+
+Os comandos b�sicos s�o:
+
+OnFwd(MOTOR, POTENCIA (0 a 100));
+delay(milisegundos);
+
+La�os s�o os comuns de C, while, for, do while, until.
+
+Condicionais if, else if, else, switch case.
+
+Para outras fun��es, tasks, structures ou condicionamentos especiais, procurar ajuda na staff do est�gio */
+
+//==============================================================================
+//==============================================================================
+//==============================================================================
+
+/* Ordem de montagem:
+
+Motor da Direita na porta A
+Motor da Arma ou desarme na porta B
+Motor da Esquerda na porta C
+Sensor na porta 1
+Qualquer outra condi��o ou ideia, buscar apoio dos membros da equipe para configura��o
+*/
+
+//==============================================================================
+//==============================================================================
+//==============================================================================
+
+//__________N�O MEXER SEM APOIO DA STAFF_______________________________________
+#define motorDireita OUT_A      // Motor Direito --> entrada A
+#define motorArma OUT_B         // Poss�vel motor de Arma --> entrada B
+#define motorEsquerda OUT_C     // Motor Esquerdo --> entrada C
+#define distancia_sensor_1  (IN_1)// Sensor Ultrass�nico --> entrada 1
+#define distancia_sensor_4  (IN_4)// Sensor Ultrass�nico --> entrada 4
+void arma();
+void movimentoInicial();
+
+
+
+
+//__________MEXER PARA REGULAR A DISTANCIA DE BUSCA____________________________________
+#define distancia_busca 35      // Limiar para o rob� come�ar a andar para frente, em cent�metros
+
+
+
+
+
+
+//==============================================================================
+//=========================CORPO DO C�DIGO======================================
+//==============================================================================
+
+task main(){
+
+    SetSensorLowspeed(IN_1);            // N�O MEXER SUJEITO � >>>PROBLEMAS<<<
+    SetSensorLowspeed(IN_4);            // N�O MEXER SUJEITO � >>>PROBLEMAS<<<
+    Wait(5000);                         // Tempo de espera previsto nas regras
+
+    arma();                           // Apagar o "//" caso seu rob� tenha motor para arma/desarme
+    movimentoInicial();            // Apagar o "//" para que seu rob� execute a estrat�gia inicial
+
+    while(true){                        //Rodar para sempre
+        if(distancia_sensor1 < distancia_busca){          // Se o sensor est� vendo menos do que o definido como limiar, v� para frente
+            if(distancia_sensor4 > distancia_busca){
+                OnFwd(motorDireita,100);     // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+                OnFwd(motorEsquerda,50);    // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+            }
+            else{
+                OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
+                OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+            }
+        }
+        else{ 
+            if(distancia_sensor4 < distancia_busca){          // Se o sensor est� vendo menos do que o definido como limiar, v� para frente
+                if(distancia_sensor1 > distancia_busca){
+                    OnFwd(motorDireita,50);     // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+                    OnFwd(motorEsquerda,100);    // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+                }
+                else{
+                    OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
+                    OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+                }
+            }
+            else{                           // Caso n�o localize um objeto, girar para um lado (nesse caso, Esquerda)
+                OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
+                OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+        }
+    }
+}
+
+void arma()                     // Fun��o para a ativa��o de uma poss�vel arma
+{
+     OnFwd(motorArma,-100);      // Se o desarme for para a dire��o contr�ria, inverter sinal. Mexer na pot�ncia.
+     Wait(250);                 // Se n�o desarmar completo, aumentar o delay;
+     Off(motorArma);            // Uma vez que as linhas acabarem, o rob� ir� para a fun��o de movimentoInicial ou voltar para a main.
+}
+
+void movimentoInicial()
+{
+   // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+   // Esta fun��o � a movimenta��o que o seu rob� far� quando os 5s acabarem, andar na diagonal, ir ret�o, dar r� ou girar.
+   // Tudo que voc�s puderem fazer ser� �til, hoje nossos rob�s atuam com 9 a 26 estrat�gias *para cada lado*
+   // Uma vez que as linhas de c�digo aqui acabarem, o rob� voltar� de onde parou, come�ando o while(true) das buscas.
+}
+
