@@ -40,19 +40,20 @@ Qualquer outra condi��o ou ideia, buscar apoio dos membros da equipe para co
 //==============================================================================
 
 //__________N�O MEXER SEM APOIO DA STAFF_______________________________________
-#define motorDireita OUT_A      // Motor Direito --> entrada A
-#define motorArma OUT_B         // Poss�vel motor de Arma --> entrada B
-#define motorEsquerda OUT_C     // Motor Esquerdo --> entrada C
-#define distancia_sensor_1  (IN_1)// Sensor Ultrass�nico --> entrada 1
-#define distancia_sensor_4  (IN_4)// Sensor Ultrass�nico --> entrada 4
+#define motorEsquerdo OUT_A         // Motor Esquerdo                --> entrada A
+#define motorArma OUT_B             // Poss�vel motor de Arma       --> entrada B
+#define motorDireito OUT_C          // Motor Direito                 --> entrada C
+#define distancia_sensor_1  (IN_1)  // Sensor Ultrass�nico Esquerdo --> entrada 1
+#define distancia_sensor_4  (IN_4)  // Sensor Ultrass�nico Direito  --> entrada 4
 void arma();
 void movimentoInicial();
+void movimentoBusca();
 
 
 
 
 //__________MEXER PARA REGULAR A DISTANCIA DE BUSCA____________________________________
-#define distancia_busca 35      // Limiar para o rob� come�ar a andar para frente, em cent�metros
+#define distancia_busca 40      // Limiar para o rob� come�ar a andar para frente, em cent�metros
 
 
 
@@ -69,41 +70,39 @@ task main(){
     SetSensorLowspeed(IN_4);            // N�O MEXER SUJEITO � >>>PROBLEMAS<<<
     Wait(5000);                         // Tempo de espera previsto nas regras
 
-    arma();                           // Apagar o "//" caso seu rob� tenha motor para arma/desarme
-    movimentoInicial();            // Apagar o "//" para que seu rob� execute a estrat�gia inicial
+    arma();                             // Apagar o "//" caso seu rob� tenha motor para arma/desarme
+    //movimentoInicial();               // Apagar o "//" para que seu rob� execute a estrat�gia inicial
 
-    while(true){                        //Rodar para sempre
-        if(distancia_sensor1 < distancia_busca){          // Se o sensor est� vendo menos do que o definido como limiar, v� para frente
-            if(distancia_sensor4 > distancia_busca){
-                OnFwd(motorDireita,100);     // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
-                OnFwd(motorEsquerda,50);    // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
-            }
-            else{
-                OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
-                OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
-            }
+    while(true){                                        //Rodar para sempre
+
+        if(distancia_sensor1 < distancia_busca){        // Se o sensor1 est� vendo menos do que o definido como limiar
+            if(distancia_sensor4 < distancia_busca){    // Se o sensor4 tambem est� vendo menos do que o definido como limiar, v� para frente
+                OnFwd(motorDireita,100);                // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+                OnFwd(motorEsquerda,100);               // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+            }                                           // Se est� vendo ambos, sensor1 e sensor4
+
+            else{                                       // Se o sensor4 N�O est� vendo menos do que o definido como limiar, fazer curva na dire��o do sensor1
+                OnFwd(motorDireita,100);                // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
+                OnFwd(motorEsquerda,75);                // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+            }                                           // Se est� vendo apenas o sensor1 e N�O o sensor4
         }
-        else{ 
-            if(distancia_sensor4 < distancia_busca){          // Se o sensor est� vendo menos do que o definido como limiar, v� para frente
-                if(distancia_sensor1 > distancia_busca){
-                    OnFwd(motorDireita,50);     // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
-                    OnFwd(motorEsquerda,100);    // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
-                }
-                else{
-                    OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
-                    OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
-                }
-            }
-            else{                           // Caso n�o localize um objeto, girar para um lado (nesse caso, Esquerda)
-                OnFwd(motorDireita,100);      // Se o seu rob� for para tr�s, inverta o sinal da pot�ncia
-                OnFwd(motorEsquerda,100);    // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+
+        else{                                           // Se o sensor1 N�O est� vendo menos do que o definido como limiar
+            if(distancia_sensor4 < distancia_busca){    // Se o sensor4 est� vendo menos do que o definido como limiar, fazer curva na dire��o do sensor4
+                OnFwd(motorDireita,75);                 // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+                OnFwd(motorEsquerda,100);               // Diminua ou aumente a pot�ncia para curvas mais r�pidas ou devagar.
+            }                                           // Se est� vendo apenas o sensor4 e N�O o sensor1
+
+            else{                                       // Se o sensor4 N�O est� vendo menos do que o definido como limiar
+                    movimentoBusca()                    // Procura o rob� inimigo
+            }                                           // Se N�O est� vendo nenhum sensor
         }
     }
 }
 
 void arma()                     // Fun��o para a ativa��o de uma poss�vel arma
 {
-     OnFwd(motorArma,-100);      // Se o desarme for para a dire��o contr�ria, inverter sinal. Mexer na pot�ncia.
+     OnFwd(motorArma,-100);     // Se o desarme for para a dire��o contr�ria, inverter sinal. Mexer na pot�ncia.
      Wait(250);                 // Se n�o desarmar completo, aumentar o delay;
      Off(motorArma);            // Uma vez que as linhas acabarem, o rob� ir� para a fun��o de movimentoInicial ou voltar para a main.
 }
@@ -116,3 +115,8 @@ void movimentoInicial()
    // Uma vez que as linhas de c�digo aqui acabarem, o rob� voltar� de onde parou, come�ando o while(true) das buscas.
 }
 
+void movimentoBusca()
+{
+   OnFwd(motorDireita,100);                 // Se o seu rob� for para tr�s, apenas inverter o sinal para "-100";
+   OnFwd(motorEsquerda,-50);                // Esta fun��o � a movimenta��o que o seu rob� far� se N�O encontrar o advers�rio, girar.
+}
