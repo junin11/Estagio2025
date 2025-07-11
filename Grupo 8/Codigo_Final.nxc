@@ -54,6 +54,10 @@ void estrategiaCor() {
      if (cor >= limiteBranco) {
         OnFwd(motorEsq,100);
         OnFwd(motorDir,100);
+        //OnRev(motorArma,100);
+        //Wait(2000);
+        //OnFwd(motorArma,100);
+        //Wait(2000);
      }
 }
 
