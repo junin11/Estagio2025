@@ -38,6 +38,8 @@ task main() {
                 OnFwd(motorDir,75);
                 Wait(40);
          }
+
+         estrategiaCor();
      }
 }
 
