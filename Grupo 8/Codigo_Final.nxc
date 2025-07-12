@@ -23,7 +23,7 @@ task main() {
      arma();
 
      while(true) {
-         
+
          if (sensorE < perto && sensorD < perto) {        //se o robo estiver vendo o outro
                 OnFwd(motorEsq,-100);
                 OnFwd(motorDir,-100);
@@ -39,14 +39,14 @@ task main() {
                 OnFwd(motorDir,-60);
                 Wait(40);
          }
-         
+
          estrategiaCor();
      }
 }
 
 void arma() {
      OnFwd(motorArma,-100);
-     Wait(1000);
+     Wait(250);
      Off(motorArma);
 }
 
@@ -54,7 +54,7 @@ void arma() {
 void estrategiaCor() {
 
      int cor = Sensor(sensorCor);                        //0-100
-     
+
      if (cor >= limiteBranco) {
         OnFwd(motorEsq,-100);
         OnFwd(motorDir,-100);
