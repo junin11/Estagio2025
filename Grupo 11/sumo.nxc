@@ -9,8 +9,8 @@
 #define PERTO 35
 
 void arma(){
-     OnFwd(motorArma, 50); //TALVEZ TENHA QUE TROCAR O SINAL
-     Wait(1000);           //MUDAR CONFORME O TEMPO NECESSARIO
+     OnFwd(motorArma, -50); //TALVEZ TENHA QUE TROCAR O SINAL
+     Wait(500);           //MUDAR CONFORME O TEMPO NECESSARIO
      Off(motorArma);
 }
 
