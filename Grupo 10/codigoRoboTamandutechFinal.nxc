@@ -1,0 +1,74 @@
+#define motorDireita OUT_A
+#define motorArma OUT_B
+#define motorEsquerda OUT_C               /
+#define distancia_sensor_esquerda SensorUS(IN_4)
+#define distancia_sensor_direita SensorUS(IN_1)
+#define distancia_busca 50
+#define distancia_minima 15
+#define distancia_aciona_arma 10
+
+void arma();
+void movimentoInicial();
+
+task main(){
+
+     SetSensorLowspeed(IN_1);
+     SetSensorLowspeed(IN_2);
+     OnRev(motorArma, 40);
+     Wait(5500);
+     
+     arma();
+     
+     OnRev(motorArma, 40);
+     
+     while(true){
+     if(distancia_sensor_esquerda > distancia_busca && distancia_sensor_direita > distancia_busca)
+     {
+                        OnFwd(motorDireita, 100);
+                        OnFwd(motorEsquerda, -100);
+     }
+     
+     else if(distancia_sensor_esquerda <= distancia_busca && distancia_sensor_direita <= distancia_busca ){ //se os sensores do robô estiver vendo o adversário
+                         OnFwd(motorDireita, 100);
+                         OnFwd(motorEsquerda, 100);
+                         }
+     else if(distancia_sensor_esquerda < distancia_busca && distancia_sensor_direita > distancia_busca){ //se apenas o sensor esquerdo do robô estiver vendo o adversário
+                         OnFwd(motorDireita, 100);
+                         OnFwd(motorEsquerda, 0);
+                         }
+     
+     else if(distancia_sensor_esquerda > distancia_busca && distancia_sensor_direita < distancia_busca){ //se apenas o sensor direito do robô estiver vendo o adversário
+                         OnFwd(motorDireita, 0);
+                         OnFwd(motorEsquerda, 100);
+                         }
+
+     else if(distancia_sensor_esquerda <= distancia_minima && distancia_sensor_direita < distancia_minima){
+          while(true){
+                      OnFwd(motorDireita, 50);
+                      OnFwd(motorEsquerda, 50);
+                      if(distancia_sensor_esquerda <= distancia_aciona_arma && distancia_sensor_direita < distancia_aciona_arma){
+                                                   OnFwd(motorDireita, 25);
+                                                   OnFwd(motorEsquerda, 25);
+                                                   Wait(20);
+                                                   OnRev(motorArma, -30);
+                                                   OnRev(motorArma, 30);
+                                         }
+
+                      }
+
+          }
+
+
+     }
+}
+
+
+void arma()
+{
+     OnRev(motorArma,-40);
+     Wait(1000);
+     Off(motorArma);
+}
+
+
+
