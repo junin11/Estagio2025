@@ -1,9 +1,9 @@
-#define motorDireita OUT_A
+#define motorDireita OUT_C
 #define motorArma OUT_B
-#define motorEsquerda OUT_C
-#define distUm SensorUS(IN_1) // SENSOR ULTRASSONICO 1
-#define distDois SensorUS(IN_2) // SENSOR ULTRASSONICO 2
-#define luzUm SensorUS(IN_3)
+#define motorEsquerda OUT_A
+#define distUm SensorUS(IN_2) // SENSOR ULTRASSONICO 1
+#define distDois SensorUS(IN_3) // SENSOR ULTRASSONICO 2
+#define luzUm SensorUS(IN_1)
 #define luzDois SensorUS(IN_4)
 #define BRANCO 60
 #define PERTO 35
@@ -30,7 +30,7 @@ task main(){
     //movimentacaoInicial();         
 
     while(true){
-        if(luzUm > 60 || luzDois > 60){
+        if(luzUm > 60 && luzDois > 60){
            OnFwd(motorEsquerda, -50);
            OnFwd(motorEsquerda, -50);
         }
