@@ -1,0 +1,38 @@
+#define motorDireita OUT_A           // Motor Direito --> entrada A
+#define motorArma OUT_B              // Motor da Arma --> entrada B
+#define motorEsquerda OUT_C          // Motor Esquerdo --> entrada C
+#define sensorE SensorUS(IN_1)  // Sensor Ultrassônico Esquerdo
+#define sensorD SensorUS(IN_2) // Sensor Ultrassônico Direito
+#define perto 28 //cm
+
+task main() {
+    SetSensorLowspeed(IN_1);
+    SetSensorLowspeed(IN_2);
+    Wait(5000);
+    OnFwd(motorArma, 100);
+    OnFwd(motorEsquerda, -50); //
+    OnFwd(motorDireita, 50); //
+    Wait(500);
+    OnFwd(motorEsquerda, -100); //
+    OnFwd(motorDireita, -100);
+    Wait(500);
+    while (true) {
+        int dist1 = sensorE;
+        int dist2 = sensorD;
+        // Se os dois sensores "veem" o oponente (ambos abaixo do limite)
+        if (dist1 < perto && dist2 < perto) {
+            // Avançar em linha reta
+            OnFwd(motorEsquerda, -100);
+            OnFwd(motorDireita, -100);
+
+            // --- PARA ANDAR PARA TRÁS EM VEZ DE AVANÇAR, use: ---
+            // OnRev(motorEsquerda, 100);
+            // OnRev(motorDireita, 100);
+        } else {
+            // Girar no lugar (horário) até encontrar com os dois sensores
+            OnFwd(motorEsquerda, 50);
+            OnRev(motorDireita, 50);
+        }
+    }
+}
+
