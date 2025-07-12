@@ -3,19 +3,20 @@
 #define motorArma OUT_B
 #define sensorD SensorUS(IN_1)
 #define sensorE SensorUS(IN_2)
-#define sensorCor SensorUS(IN_3)
+#define sensorCor IN_3
 
 // limite branco=60; limite preto=40
 #define limiteBranco 60
 #define perto 35
 
 void arma();
+void estrategiaCor();
 
 task main() {
 
      SetSensorLowspeed(IN_1);
      SetSensorLowspeed(IN_2);
-     SetSensorColorFull(IN_3);
+     SetSensorLight(IN_3);
      //SetSensorMode(sensorCor, IN_MODE_PCTFULLSCALE);
      Wait(5000);
 
@@ -24,42 +25,42 @@ task main() {
      while(true) {
          
          if (sensorE < perto && sensorD < perto) {        //se o robo estiver vendo o outro
-                OnFwd(motorEsq,100);
-                OnFwd(motorDir,100);
-                wait(40);
+                OnFwd(motorEsq,-100);
+                OnFwd(motorDir,-100);
+                Wait(40);
          }
          else if (sensorE < perto && sensorD > perto) {   //procurando 1
-                OnRev(motorDir,75);
-                OnFwd(motorEsq,75);
+                OnRev(motorDir,-60);
+                OnFwd(motorEsq,-60);
                 Wait(40);
          }
          else {                                           //procurando 2
-                OnRev(motorEsq,75);
-                OnFwd(motorDir,75);
+                OnRev(motorEsq,-60);
+                OnFwd(motorDir,-60);
                 Wait(40);
          }
-
+         
          estrategiaCor();
      }
 }
 
 void arma() {
-     OnFwd(motorArma,100);
+     OnFwd(motorArma,-100);
      Wait(1000);
      Off(motorArma);
 }
 
 
 void estrategiaCor() {
+
      int cor = Sensor(sensorCor);                        //0-100
      
      if (cor >= limiteBranco) {
-        OnFwd(motorEsq,100);
-        OnFwd(motorDir,100);
+        OnFwd(motorEsq,-100);
+        OnFwd(motorDir,-100);
         //OnRev(motorArma,100);
         //Wait(2000);
         //OnFwd(motorArma,100);
         //Wait(2000);
      }
 }
-
