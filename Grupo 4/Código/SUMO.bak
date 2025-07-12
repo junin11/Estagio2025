@@ -1,0 +1,58 @@
+#define MOTOR_DIREITO  OUT_A
+#define MOTOR_ESQUERDO OUT_B
+#define MOTOR_CENTRAL  OUT_C
+
+#define SENSOR_DIREITO  S1
+#define SENSOR_ESQUERDO S2
+
+// Limite de distância para considerar obstáculo (em cm)
+#define DISTANCIA_LIMITE 40
+
+// Velocidades
+#define POT_MAX   100
+#define POT_GIRAR 50
+
+// Função para movimentar os motores esquerdo e direito
+void movimento(int potDir, int potEsq) {
+    OnFwd(MOTOR_DIREITO, potDir);
+    OnFwd(MOTOR_ESQUERDO, potEsq);
+}
+
+// Função principal de lógica de movimentação
+void loop() {
+    int distDir = Sensor(SENSOR_DIREITO);
+    int distEsq = Sensor(SENSOR_ESQUERDO);
+
+    if (distDir < DISTANCIA_LIMITE && distEsq < DISTANCIA_LIMITE) {
+        // Obstáculo nos dois sensores
+        movimento(-POT_MAX, -POT_MAX);
+    } else if (distDir < DISTANCIA_LIMITE) {
+        // Obstáculo à direita
+        movimento(POT_MAX, -POT_MAX);
+    } else if (distEsq < DISTANCIA_LIMITE) {
+        // Obstáculo à esquerda
+        movimento(-POT_MAX, POT_MAX);
+    } else {
+        // Nenhum obstáculo — gira para procurar
+        movimento(POT_GIRAR, -POT_GIRAR);
+    }
+}
+
+task main() {
+    // Configura sensores ultrassônicos
+    SetSensorLowspeed(SENSOR_DIREITO);
+    SetSensorLowspeed(SENSOR_ESQUERDO);
+
+    // Espera inicial de 5 segundos
+    Wait(5000);
+
+    // Abaixa a "arma" com o motor central (ajuste se necessário)
+    RotateMotor(MOTOR_CENTRAL, 50, 90);
+
+    // Inicia movimentação principal
+    while (true) {
+        loop();
+        Wait(100); // Delay para estabilidade
+    }
+}
+

@@ -1,0 +1,543 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__D0SetSensorLowspeed_inline_main	6	1	0	4	4
+1	__DU0SetSensorLowspeed_inline_main	5	1	4	4	10
+2	__D0main	6	1	8	4	6
+3	__D0movimento	6	1	12	4	4
+4	__signed_stack_001movimento	6	1	16	4	4
+5	__rotate_theAngle2	5	1	20	4	2
+6	__signed_stack_001loop	6	1	24	4	8
+7	__signed_stack_001main	6	1	28	4	2
+8	__CLSCSMutex0	9	0	32	4	2
+9	__CLSRMutex1	9	0	36	4	2
+10	__CLSWMutex1	9	0	40	4	2
+11	__RLSBmutex1	9	0	44	4	2
+12	__RLSBmutex0	9	0	48	4	2
+13	__CLSWMutex0	9	0	52	4	2
+14	__D0loop	6	1	56	4	20
+15	__CLSCSMutex1	9	0	60	4	2
+16	__CLSRMutex0	9	0	64	4	2
+17	__rotate_angle2	6	1	68	4	5
+18	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	72	4	4
+19	__rotate_OldRotCount2	4	1	76	2	2
+20	__loop_7qG2_distEsq_7qG2_000	4	1	78	2	3
+21	__loop_7qG2_distDir_7qG2_000	4	1	80	2	3
+22	__movimento_7qG2_potDir_7qG2_000	4	1	82	2	5
+23	__rotate_RotCount2	4	1	84	2	4
+24	__movimento_7qG2_potEsq_7qG2_000	4	1	86	2	5
+25	__constValNeg100	2	0	88	1	4
+26	__RLSBIterations0	1	1	89	1	4
+27	__ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main	1	1	90	1	2
+28	__PFTmp	1	1	91	1	1
+29	__SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_main	1	1	92	1	4
+30	__constVal2	2	0	93	1	1
+31	____ReadLSBytes1_return	1	1	94	1	3
+32	__constValNeg90	2	0	95	1	1
+33	__RLSBResult1	2	1	96	1	7
+34	__RLSBIterations1	1	1	97	1	4
+35	__RLSBytesCount1	1	1	98	1	7
+36	__loop_return	1	1	99	1	3
+37	__constValNeg50	2	0	100	1	1
+38	____initialize_global_data_return	1	1	101	1	3
+39	__constVal63	2	0	102	1	2
+40	__constVal96	2	0	103	1	3
+41	__movimento_return	1	1	104	1	6
+42	__SetSensorLowspeed_7qG2_port_7qG2_000_inline_main	1	1	105	1	10
+43	__constVal7	2	0	106	1	2
+44	__SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main	1	1	107	1	4
+45	__constVal15	2	0	108	1	4
+46	__SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_main	1	1	109	1	4
+47	__SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main	1	1	110	1	4
+48	__SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_main	1	1	111	1	4
+49	__rotate_thePower2	2	1	112	1	4
+50	__rotate_theTurnPct2	2	1	113	1	4
+51	__rotate_rs2	1	1	114	1	2
+52	__rotate_theRVI2	1	1	115	1	2
+53	__rotate_theRVD2	1	1	116	1	2
+54	__constVal50	2	0	117	1	1
+55	____RotateMotor2_return	1	1	118	1	3
+56	__constVal0	2	1	119	1	14
+57	__constVal32	2	0	120	1	10
+58	__constVal1	2	0	121	1	12
+59	__rotate_stop2	1	1	122	1	2
+60	__rotate_turnpct2	2	1	123	1	3
+61	__rotate_sync2	1	1	124	1	2
+62	__rotate_power2	1	1	125	1	4
+63	__rotate_firstPort2	1	1	126	1	5
+64	__rotate_theRS2	1	1	127	1	3
+65	__rotate_theRVP2	1	1	128	1	2
+66	__rotate_theRM2	1	1	129	1	4
+67	__rotate_theUF2	1	1	130	1	6
+68	__rotate_theOM2	1	1	131	1	7
+69	__LSWriteOptions1	1	1	132	1	1
+70	__LSWriteOptions0	1	1	133	1	1
+71	____ReadLSBytes0_return	1	1	134	1	3
+72	__RLSBytesCount0	1	1	135	1	7
+73	__RLSBResult0	2	1	136	1	7
+74	__ResetSensorTmp	1	1	137	1	2
+75	____ResetSensorSubroutine_return	1	1	138	1	4
+76	____RotateMotor2_sign_tmp	2	1	139	1	4
+77	__ResetSensorPort	1	1	140	1	4
+78	__CLSCSArgs1	8	0	3	4	4
+79	__CLSCSArgs1.Result	2	1	144	1	4
+80	__CLSCSArgs1.Port	1	1	145	1	4
+81	__CLSCSArgs1.BytesReady	1	1	146	1	4
+82	__CLSRArgs0	8	0	4	12	5
+83	__CLSRArgs0.Result	2	1	148	1	5
+84	__CLSRArgs0.Port	1	1	149	1	5
+85	__CLSRArgs0.Buffer	7	0	150	4	5
+86	__CLSRArgs0.Buffer.Buffer_type	1	0	0	1	0
+87	__CLSRArgs0.BufferLen	1	1	152	1	5
+88	__CLSWArgs0	8	0	4	12	5
+89	__CLSWArgs0.Result	2	1	156	1	5
+90	__CLSWArgs0.Port	1	1	157	1	5
+91	__CLSWArgs0.Buffer	7	0	158	4	5
+92	__CLSWArgs0.Buffer.Buffer_type	1	0	0	1	0
+93	__CLSWArgs0.ReturnLen	1	1	160	1	5
+94	__CLSWArgs1	8	0	4	12	5
+95	__CLSWArgs1.Result	2	1	164	1	5
+96	__CLSWArgs1.Port	1	1	165	1	5
+97	__CLSWArgs1.Buffer	7	0	166	4	5
+98	__CLSWArgs1.Buffer.Buffer_type	1	0	0	1	0
+99	__CLSWArgs1.ReturnLen	1	1	168	1	5
+100	__CLSCSArgs0	8	0	3	4	4
+101	__CLSCSArgs0.Result	2	1	172	1	4
+102	__CLSCSArgs0.Port	1	1	173	1	4
+103	__CLSCSArgs0.BytesReady	1	1	174	1	4
+104	__CLSRArgs1	8	0	4	12	5
+105	__CLSRArgs1.Result	2	1	176	1	5
+106	__CLSRArgs1.Port	1	1	177	1	5
+107	__CLSRArgs1.Buffer	7	0	178	4	5
+108	__CLSRArgs1.Buffer.Buffer_type	1	0	0	1	0
+109	__CLSRArgs1.BufferLen	1	1	180	1	5
+110	__RLSReadBuf0	7	0	182	4	8
+111	__RLSReadBuf0.__RLSReadBuf0_type	1	0	0	1	0
+112	__rotate_ports2	7	0	184	4	6
+113	__rotate_ports2.__rotate_ports2_type	1	0	0	1	0
+114	__RLSReadBuf1	7	0	186	4	8
+115	__RLSReadBuf1.__RLSReadBuf1_type	1	0	0	1	0
+116	__RLSBbufLSWrite1	7	0	188	4	2
+117	__RLSBbufLSWrite1.__RLSBbufLSWrite1_type	1	0	0	1	0
+118	__RLSLastGoodRead0	7	0	190	4	2
+119	__RLSLastGoodRead0.__RLSLastGoodRead0_type	1	0	0	1	0
+120	__RLSLastGoodRead1	7	0	192	4	2
+121	__RLSLastGoodRead1.__RLSLastGoodRead1_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	42	0	#line 42 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	43	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	42	2	#line 42 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	42	2	#line 42 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	43	2		set __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main, 0
+0	42	5	#line 42 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	43	5	#line 43 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	44	5		mov __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_main, __constVal1
+0	4342	7	#line 4342 "NXCDefs.h"
+0	4343	7		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4342	9	#line 4342 "NXCDefs.h"
+0	4342	9	#line 4342 "NXCDefs.h"
+0	4343	9		mov __DU0SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_main
+0	4342	11	#line 4342 "NXCDefs.h"
+0	4343	11		tst 5, __D0SetSensorLowspeed_inline_main, __DU0SetSensorLowspeed_inline_main
+0	4342	14	#line 4342 "NXCDefs.h"
+0	4343	14		brtst 4, __004__ASM_Label_36, __D0SetSensorLowspeed_inline_main
+0	4342	17	#line 4342 "NXCDefs.h"
+0	4343	17		set __DU0SetSensorLowspeed_inline_main, 11
+0	4342	20	#line 4342 "NXCDefs.h"
+0	4342	20	#line 4342 "NXCDefs.h"
+0	4343	20		jmp __004__ASM_Label_37
+0	4342	22	#line 4342 "NXCDefs.h"
+0	4343	22		set __DU0SetSensorLowspeed_inline_main, 10
+0	4342	25	#line 4342 "NXCDefs.h"
+0	4342	25	#line 4342 "NXCDefs.h"
+0	4343	25		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_main, __DU0SetSensorLowspeed_inline_main
+0	4247	27	#line 4247 "NXCDefs.h"
+0	4248	27		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, 0
+0	4247	31	#line 4247 "NXCDefs.h"
+0	4343	31	#line 4343 "NXCDefs.h"
+0	4343	31	#line 4343 "NXCDefs.h"
+0	4344	31		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4343	33	#line 4343 "NXCDefs.h"
+0	4343	33	#line 4343 "NXCDefs.h"
+0	4344	33		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_main, 0
+0	4343	36	#line 4343 "NXCDefs.h"
+0	4260	36	#line 4260 "NXCDefs.h"
+0	4261	36		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, 1
+0	4260	40	#line 4260 "NXCDefs.h"
+0	4344	40	#line 4344 "NXCDefs.h"
+0	4344	40	#line 4344 "NXCDefs.h"
+0	4345	40		mov __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4344	42	#line 4344 "NXCDefs.h"
+0	4278	42	#line 4278 "NXCDefs.h"
+0	4279	42	#pragma macro 4
+0	4279	42		mov __ResetSensorPort, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4279	44		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+0	3917	46	#line 3917 "NXCDefs.h"
+0	4278	46	#line 4278 "NXCDefs.h"
+0	4345	46	#line 4345 "NXCDefs.h"
+0	43	46	#line 43 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	43	46	#line 43 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	44	46		set __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main, 1
+0	43	49	#line 43 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	46	49	#line 46 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	47	49		mov __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_main, __constVal1
+0	4342	51	#line 4342 "NXCDefs.h"
+0	4343	51		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4342	53	#line 4342 "NXCDefs.h"
+0	4342	53	#line 4342 "NXCDefs.h"
+0	4343	53		mov __DU0SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_main
+0	4342	55	#line 4342 "NXCDefs.h"
+0	4343	55		tst 5, __D0SetSensorLowspeed_inline_main, __DU0SetSensorLowspeed_inline_main
+0	4342	58	#line 4342 "NXCDefs.h"
+0	4343	58		brtst 4, __005__ASM_Label_36, __D0SetSensorLowspeed_inline_main
+0	4342	61	#line 4342 "NXCDefs.h"
+0	4343	61		set __DU0SetSensorLowspeed_inline_main, 11
+0	4342	64	#line 4342 "NXCDefs.h"
+0	4342	64	#line 4342 "NXCDefs.h"
+0	4343	64		jmp __005__ASM_Label_37
+0	4342	66	#line 4342 "NXCDefs.h"
+0	4343	66		set __DU0SetSensorLowspeed_inline_main, 10
+0	4342	69	#line 4342 "NXCDefs.h"
+0	4342	69	#line 4342 "NXCDefs.h"
+0	4343	69		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_main, __DU0SetSensorLowspeed_inline_main
+0	4247	71	#line 4247 "NXCDefs.h"
+0	4248	71		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, 0
+0	4247	75	#line 4247 "NXCDefs.h"
+0	4343	75	#line 4343 "NXCDefs.h"
+0	4343	75	#line 4343 "NXCDefs.h"
+0	4344	75		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4343	77	#line 4343 "NXCDefs.h"
+0	4343	77	#line 4343 "NXCDefs.h"
+0	4344	77		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_main, 0
+0	4343	80	#line 4343 "NXCDefs.h"
+0	4260	80	#line 4260 "NXCDefs.h"
+0	4261	80		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, 1
+0	4260	84	#line 4260 "NXCDefs.h"
+0	4344	84	#line 4344 "NXCDefs.h"
+0	4344	84	#line 4344 "NXCDefs.h"
+0	4345	84		mov __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_main, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4344	86	#line 4344 "NXCDefs.h"
+0	4278	86	#line 4278 "NXCDefs.h"
+0	4279	86	#pragma macro 4
+0	4279	86		mov __ResetSensorPort, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_main
+0	4279	88		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+0	3980	90	#line 3980 "NXCDefs.h"
+0	4278	90	#line 4278 "NXCDefs.h"
+0	4345	90	#line 4345 "NXCDefs.h"
+0	46	90	#line 46 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	46	90	#line 46 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	47	90		set __Wait_7qG2_ms_7qG2_000_inline_main, 5000
+0	46	93	#line 46 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	8551	93	#line 8551 "NXCDefs.h"
+0	8552	93		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	8551	96	#line 8551 "NXCDefs.h"
+0	49	96	#line 49 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	49	96	#line 49 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	50	96		set __signed_stack_001main, 50
+0	49	99	#line 49 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	49	99	#line 49 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	50	99		mov __D0main, __constValNeg90
+0	52	101	#line 52 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	53	101	#pragma macro 33
+0	53	101		arrbuild __rotate_ports2, __constVal2
+0	53	105		mov __rotate_power2, __signed_stack_001main
+0	53	107		mov __rotate_angle2, __D0main
+0	53	109		mov __rotate_turnpct2, __constVal0
+0	53	111		mov __rotate_sync2, __constVal0
+0	53	113		mov __rotate_stop2, __constVal1
+0	53	115		mov __rotate_theRVP2, __constVal32
+0	53	117		mov __rotate_theRVI2, __constVal0
+0	53	119		mov __rotate_theRVD2, __constVal96
+0	53	121		subcall __RotateMotor2, ____RotateMotor2_return
+0	4004	123	#line 4004 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	52	123	#line 52 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	52	123	#line 52 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	53	123		set __D0main, 1
+0	53	126	#line 53 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	54	126		tst 5, __D0main, __D0main
+0	53	129	#line 53 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	54	129		brtst 4, __ASM_Label_540, __D0main
+0	54	132	#line 54 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	55	132		subcall loop, __loop_return
+0	54	134	#line 54 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	54	134	#line 54 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	55	134		set __Wait_7qG2_ms_7qG2_000_inline_main, 100
+0	54	137	#line 54 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	8551	137	#line 8551 "NXCDefs.h"
+0	8552	137		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	8551	140	#line 8551 "NXCDefs.h"
+0	55	140	#line 55 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	58	140	#line 58 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	59	140		jmp __ASM_Label_539
+0	58	142	#line 58 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+0	59	142		exit -1, -1
+1	5173	0		brtst 4, __rotate_Done2, __rotate_angle2
+1	5174	3		set ____RotateMotor2_sign_tmp, 0
+1	5174	6		brtst EQ, __sign_2, __rotate_angle2
+1	5174	9		set ____RotateMotor2_sign_tmp, -1
+1	5174	12		brtst LT, __sign_2, __rotate_angle2
+1	5174	15		set ____RotateMotor2_sign_tmp, 1
+1	5174	18	__sign_2:	mov __rotate_thePower2, ____RotateMotor2_sign_tmp
+1	5175	20		abs __rotate_theAngle2, __rotate_angle2
+1	5176	23		mul __rotate_thePower2, __rotate_thePower2, __rotate_power2
+1	5178	27		set __rotate_theUF2, 23
+1	5179	30		brtst 4, __rotate_NoSync2, __rotate_sync2
+1	5180	33		set __rotate_theOM2, 7
+1	5181	36		set __rotate_theRM2, 2
+1	5182	39		mov __rotate_theTurnPct2, __rotate_turnpct2
+1	5183	41		brtst 4, __rotate_Start2, __rotate_theTurnPct2
+1	5184	44		add __rotate_theUF2, __rotate_theUF2, __constVal32
+1	5185	48		jmp __rotate_Start2
+1	5187	50		set __rotate_theOM2, 3
+1	5188	53		set __rotate_theRM2, 0
+1	5189	56		set __rotate_theTurnPct2, 0
+1	5191	59		set __rotate_theRS2, 32
+1	5192	62		setout __rotate_ports2, 1, __rotate_theOM2, 8, __rotate_theRM2, 5, __rotate_theAngle2, 6, __rotate_theRS2, 10, __rotate_theRVP2, 11, __rotate_theRVI2, 12, __rotate_theRVD2, 2, __rotate_thePower2, 7, __rotate_turnpct2, 0, __rotate_theUF2
+1	5195	85		index __rotate_firstPort2, __rotate_ports2, 65535
+1	5197	89		getout __rotate_power2, __rotate_firstPort2, 2
+1	5198	93		brtst 4, __rotate_doneRunning2, __rotate_power2
+1	5199	96		getout __rotate_rs2, __rotate_firstPort2, 6
+1	5200	100		brcmp 4, __rotate_Running2, __rotate_rs2, __constVal32
+1	5202	104		brtst 4, __rotate_Reset2, __rotate_stop2
+1	5204	107		set __rotate_theOM2, 7
+1	5205	110		set __rotate_theUF2, 7
+1	5206	113		setout __rotate_ports2, 1, __rotate_theOM2, 8, __constVal1, 6, __rotate_theRS2, 2, __constVal0, 5, __constVal0, 0, __rotate_theUF2
+1	5208	128		getout __rotate_RotCount2, __rotate_firstPort2, 14
+1	5210	132		mov __rotate_OldRotCount2, __rotate_RotCount2
+1	5211	134		wait2 NA, __constVal50
+1	5213	137		getout __rotate_RotCount2, __rotate_firstPort2, 14
+1	5214	141		brcmp 5, __rotate_Stabilize2, __rotate_OldRotCount2, __rotate_RotCount2
+1	5215	145		set __rotate_theOM2, 4
+1	5216	148		setout __rotate_ports2, 8, __rotate_theRM2, 6, __constVal0, 1, __rotate_theOM2, 0, __constVal1
+1	5219	159		brtst 4, __rotate_Done2, __rotate_theTurnPct2
+1	5220	162		setout __rotate_ports2, 0, __constVal32
+1	5222	167		subret ____RotateMotor2_return
+2	5476	0		setin __constVal1, __ResetSensorPort, 5
+2	5478	4		getin __ResetSensorTmp, __ResetSensorPort, 5
+2	5479	8		brtst 5, __SensorStillInvalid, __ResetSensorTmp
+2	5480	11		subret ____ResetSensorSubroutine_return
+3	6281	0	#pragma macro 25
+3	6281	0		acquire __CLSWMutex0
+3	6281	1		or __CLSWArgs0.Port, __constVal0, __LSWriteOptions0
+3	6281	5		mov __CLSWArgs0.ReturnLen, __RLSBytesCount0
+3	6281	7		mov __CLSWArgs0.Buffer, __RLSReadBuf0
+3	6281	9		syscall 21, __CLSWArgs0
+3	6281	12		mov __RLSBResult0, __CLSWArgs0.Result
+3	6281	14		release __CLSWMutex0
+3	6282	15	#line 6282 "NXTDefs.h"
+3	6283	15		brtst 5, __RLSBError0, __RLSBResult0
+3	6284	18		set __RLSBIterations0, 60
+3	6286	21	#pragma macro 23
+3	6286	21		acquire __CLSCSMutex0
+3	6286	22		set __CLSCSArgs0.Port, 0
+3	6286	25		syscall 23, __CLSCSArgs0
+3	6286	28		mov __RLSBytesCount0, __CLSCSArgs0.BytesReady
+3	6286	30		mov __RLSBResult0, __CLSCSArgs0.Result
+3	6286	32		release __CLSCSMutex0
+3	6286	33	#line 6286 "NXTDefs.h"
+3	6287	33		sub __RLSBIterations0, __RLSBIterations0, __constVal1
+3	6288	37		brtst 2, __RLSBError0, __RLSBIterations0
+3	6289	40		brtst 0, __RLSBError0, __RLSBResult0
+3	6290	43		brtst 4, __RLSBReadyToRead0, __RLSBResult0
+3	6292	46		wait2 NA, __constVal1
+3	6293	49		jmp __RLSBDoCheckStatus0
+3	6295	51		brtst 4, __RLSBReturn0, __RLSBytesCount0
+3	6296	54		arrinit __RLSReadBuf0, __constVal0, __RLSBytesCount0
+3	6298	58	#pragma macro 25
+3	6298	58		acquire __CLSRMutex0
+3	6298	59		set __CLSRArgs0.Port, 0
+3	6298	62		mov __CLSRArgs0.BufferLen, __RLSBytesCount0
+3	6298	64		syscall 22, __CLSRArgs0
+3	6298	67		mov __RLSReadBuf0, __CLSRArgs0.Buffer
+3	6298	69		mov __RLSBResult0, __CLSRArgs0.Result
+3	6298	71		release __CLSRMutex0
+3	6298	72	#line 6298 "NXTDefs.h"
+3	6299	72		brtst 5, __RLSBError0, __RLSBResult0
+3	6300	75		mov __RLSLastGoodRead0, __RLSReadBuf0
+3	6301	77		jmp __RLSBDone0
+3	6303	79		mov __RLSReadBuf0, __RLSLastGoodRead0
+3	6305	81		arrsize __RLSBytesCount0, __RLSReadBuf0
+3	6307	84		subret ____ReadLSBytes0_return
+4	6319	0	#pragma macro 25
+4	6319	0		acquire __CLSWMutex1
+4	6319	1		or __CLSWArgs1.Port, __constVal1, __LSWriteOptions1
+4	6319	5		mov __CLSWArgs1.ReturnLen, __RLSBytesCount1
+4	6319	7		mov __CLSWArgs1.Buffer, __RLSReadBuf1
+4	6319	9		syscall 21, __CLSWArgs1
+4	6319	12		mov __RLSBResult1, __CLSWArgs1.Result
+4	6319	14		release __CLSWMutex1
+4	6319	15	#line 6319 "NXTDefs.h"
+4	6320	15		brtst 5, __RLSBError1, __RLSBResult1
+4	6321	18		set __RLSBIterations1, 60
+4	6323	21	#pragma macro 23
+4	6323	21		acquire __CLSCSMutex1
+4	6323	22		set __CLSCSArgs1.Port, 1
+4	6323	25		syscall 23, __CLSCSArgs1
+4	6323	28		mov __RLSBytesCount1, __CLSCSArgs1.BytesReady
+4	6323	30		mov __RLSBResult1, __CLSCSArgs1.Result
+4	6323	32		release __CLSCSMutex1
+4	6323	33	#line 6323 "NXTDefs.h"
+4	6324	33		sub __RLSBIterations1, __RLSBIterations1, __constVal1
+4	6325	37		brtst 2, __RLSBError1, __RLSBIterations1
+4	6326	40		brtst 0, __RLSBError1, __RLSBResult1
+4	6327	43		brtst 4, __RLSBReadyToRead1, __RLSBResult1
+4	6329	46		wait2 NA, __constVal1
+4	6330	49		jmp __RLSBDoCheckStatus1
+4	6332	51		brtst 4, __RLSBReturn1, __RLSBytesCount1
+4	6333	54		arrinit __RLSReadBuf1, __constVal0, __RLSBytesCount1
+4	6335	58	#pragma macro 25
+4	6335	58		acquire __CLSRMutex1
+4	6335	59		set __CLSRArgs1.Port, 1
+4	6335	62		mov __CLSRArgs1.BufferLen, __RLSBytesCount1
+4	6335	64		syscall 22, __CLSRArgs1
+4	6335	67		mov __RLSReadBuf1, __CLSRArgs1.Buffer
+4	6335	69		mov __RLSBResult1, __CLSRArgs1.Result
+4	6335	71		release __CLSRMutex1
+4	6335	72	#line 6335 "NXTDefs.h"
+4	6336	72		brtst 5, __RLSBError1, __RLSBResult1
+4	6337	75		mov __RLSLastGoodRead1, __RLSReadBuf1
+4	6338	77		jmp __RLSBDone1
+4	6340	79		mov __RLSReadBuf1, __RLSLastGoodRead1
+4	6342	81		arrsize __RLSBytesCount1, __RLSReadBuf1
+4	6344	84		subret ____ReadLSBytes1_return
+5	16	0	#line 16 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	17	0		mov __signed_stack_001movimento, __movimento_7qG2_potDir_7qG2_000
+5	16	2	#line 16 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	16	2	#line 16 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	17	2		set __D0movimento, 1
+5	17	5	#line 17 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	18	5	#pragma macro 7
+5	18	5		setout __constVal0, 2, __signed_stack_001movimento, 1, __constVal7, 8, __D0movimento, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+5	3667	28	#line 3667 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	17	28	#line 17 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	17	28	#line 17 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	18	28		mov __signed_stack_001movimento, __movimento_7qG2_potEsq_7qG2_000
+5	17	30	#line 17 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	17	30	#line 17 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	18	30		set __D0movimento, 1
+5	18	33	#line 18 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	19	33	#pragma macro 7
+5	19	33		setout __constVal1, 2, __signed_stack_001movimento, 1, __constVal7, 8, __D0movimento, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+5	3680	56	#line 3680 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	18	56	#line 18 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	21	56	#line 21 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+5	22	56		subret __movimento_return
+6	22	0	#line 22 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	23	0	#pragma macro 26
+6	23	0		acquire __RLSBmutex0
+6	23	1		mov __RLSReadBuf0, __RLSBbufLSWrite1
+6	23	3		set __RLSBytesCount0, 1
+6	23	6		wait2 NA, __constVal15
+6	23	9		subcall __ReadLSBytes0, ____ReadLSBytes0_return
+6	23	11		index __D0loop, __RLSReadBuf0, 65535
+6	23	15		release __RLSBmutex0
+6	3693	16	#line 3693 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	22	16	#line 22 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	23	16		mov __loop_7qG2_distDir_7qG2_000, __D0loop
+6	23	18	#line 23 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	24	18	#pragma macro 26
+6	24	18		acquire __RLSBmutex1
+6	24	19		mov __RLSReadBuf1, __RLSBbufLSWrite1
+6	24	21		set __RLSBytesCount1, 1
+6	24	24		wait2 NA, __constVal15
+6	24	27		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+6	24	29		index __D0loop, __RLSReadBuf1, 65535
+6	24	33		release __RLSBmutex1
+6	3703	34	#line 3703 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	23	34	#line 23 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	24	34		mov __loop_7qG2_distEsq_7qG2_000, __D0loop
+6	25	36	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	36		mov __signed_stack_001loop, __loop_7qG2_distDir_7qG2_000
+6	25	38	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	25	38	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	38		set __D0loop, 40
+6	25	41	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	41		cmp 0, __D0loop, __signed_stack_001loop, __D0loop
+6	25	45	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	45		brtst 4, __ASM_Label_502, __D0loop
+6	25	48	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	48		mov __signed_stack_001loop, __loop_7qG2_distEsq_7qG2_000
+6	25	50	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	25	50	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	50		set __D0loop, 40
+6	25	53	#line 25 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	26	53		cmp 0, __D0loop, __signed_stack_001loop, __D0loop
+6	27	57	#line 27 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	57		brtst 4, __ASM_Label_503, __D0loop
+6	27	60	#line 27 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	60		mov __movimento_7qG2_potDir_7qG2_000, __constValNeg100
+6	27	62	#line 27 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	27	62	#line 27 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	62		mov __movimento_7qG2_potEsq_7qG2_000, __constValNeg100
+6	27	64	#line 27 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	64	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	29	64		subcall movimento, __movimento_return
+6	28	66	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	66	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	29	66		jmp __ASM_Label_508
+6	28	68	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	29	68		mov __signed_stack_001loop, __loop_7qG2_distDir_7qG2_000
+6	28	70	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	28	70	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	29	70		set __D0loop, 40
+6	28	73	#line 28 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	29	73		cmp 0, __D0loop, __signed_stack_001loop, __D0loop
+6	30	77	#line 30 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	77		brtst 4, __ASM_Label_511, __D0loop
+6	30	80	#line 30 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	80		mov __movimento_7qG2_potDir_7qG2_000, __constValNeg100
+6	30	82	#line 30 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	30	82	#line 30 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	82		set __movimento_7qG2_potEsq_7qG2_000, 100
+6	30	85	#line 30 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	85	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	32	85		subcall movimento, __movimento_return
+6	31	87	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	87	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	32	87		jmp __ASM_Label_516
+6	31	89	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	32	89		mov __signed_stack_001loop, __loop_7qG2_distEsq_7qG2_000
+6	31	91	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	31	91	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	32	91		set __D0loop, 40
+6	31	94	#line 31 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	32	94		cmp 0, __D0loop, __signed_stack_001loop, __D0loop
+6	33	98	#line 33 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	34	98		brtst 4, __ASM_Label_519, __D0loop
+6	33	101	#line 33 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	34	101		set __movimento_7qG2_potDir_7qG2_000, 100
+6	33	104	#line 33 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	33	104	#line 33 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	34	104		mov __movimento_7qG2_potEsq_7qG2_000, __constValNeg100
+6	33	106	#line 33 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	34	106	#line 34 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	35	106		subcall movimento, __movimento_return
+6	34	108	#line 34 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	36	108	#line 36 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	37	108		jmp __ASM_Label_524
+6	36	110	#line 36 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	37	110		set __movimento_7qG2_potDir_7qG2_000, 50
+6	36	113	#line 36 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	36	113	#line 36 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	37	113		mov __movimento_7qG2_potEsq_7qG2_000, __constValNeg50
+6	36	115	#line 36 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	37	115	#line 37 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	38	115		subcall movimento, __movimento_return
+6	37	117	#line 37 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	40	117	#line 40 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	40	117	#line 40 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	40	117	#line 40 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	40	117	#line 40 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+6	41	117		subret __loop_return
+7	59	0	#line 59 "C:\Users\DC5\Desktop\Legos\SUMO.nxc"
+7	60	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\DC5\Desktop\Legos\SUMO.nxc
+1	__RotateMotor2	145	NXTDefs.h
+2	__ResetSensorSubroutine	314	NXTDefs.h
+3	__ReadLSBytes0	327	NXTDefs.h
+4	__ReadLSBytes1	413	NXTDefs.h
+5	movimento	499	C:\Users\DC5\Desktop\Legos\SUMO.nxc
+6	loop	557	C:\Users\DC5\Desktop\Legos\SUMO.nxc
+7	__initialize_global_data	676	C:\Users\DC5\Desktop\Legos\SUMO.nxc
