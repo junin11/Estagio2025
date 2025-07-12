@@ -1,0 +1,46 @@
+#define motorDireita OUT_A
+#define motorArma OUT_B
+#define motorEsquerda OUT_C
+#define distUm SensorUS(IN_1) // SENSOR ULTRASSONICO 1
+#define distDois SensorUS(IN_2) // SENSOR ULTRASSONICO 2
+#define luzUm SensorUS(IN_3)
+#define luzDois SensorUS(IN_4)
+#define BRANCO 60
+#define PERTO 35
+
+void arma(){
+     OnFwd(motorArma, 50); //TALVEZ TENHA QUE TROCAR O SINAL
+     Wait(1000);           //MUDAR CONFORME O TEMPO NECESSARIO
+     Off(motorArma);
+}
+
+void movimentoInicial(){
+}
+
+task main(){
+
+    SetSensorLowspeed(IN_1);
+    SetSensorLowspeed(IN_2);
+    SetSensorLowspeed(IN_3);
+    SetSensorLowspeed(IN_4);
+    
+    Wait(5000);
+
+    arma();
+    //movimentacaoInicial();         
+
+    while(true){
+        if(luzUm > 60 || luzDois > 60){
+           OnFwd(motorEsquerda, -50);
+           OnFwd(motorEsquerda, -50);
+        }
+        if(distUm < PERTO && distDois < PERTO){
+           OnFwd(motorDireita, 100);     
+           OnFwd(motorEsquerda, 100);    
+        }
+        else{                           
+           OnFwd(motorDireita, 50);      
+           OnFwd(motorEsquerda, -50);    
+        }
+    }
+}
