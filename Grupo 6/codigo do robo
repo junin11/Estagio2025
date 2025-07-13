@@ -1,0 +1,121 @@
+#define distancia_sensor SensorUS(IN_4)
+#define motorDireita OUT_B
+#define motorArma OUT_A
+#define motorEsquerda OUT_C
+
+void movimentoInicial();
+
+task main()
+{
+    SetSensorLowspeed(IN_4);
+    Wait(5000);
+
+    movimentoInicial();
+
+    while(true)
+    {
+        if(distancia_sensor < 25)                  // Se o robo ver o inimigo, ir pra frente
+        {
+           OnRev(motorDireita,100);
+           OnRev(motorEsquerda,100);
+        }
+        else
+        {                                          // Caso não localize o inimigo, girar para esquerda
+           OnRev(motorDireita,100);
+           OnFwd(motorEsquerda,100);
+        }
+    }
+}
+
+void movimentoInicial()
+{
+   OnFwd(motorArma,100);      //soltar a asa
+   OnRev(motorDireita, 100);
+   OnRev(motorEsquerda, 100);
+   Wait(500);
+   Off(motorArma);
+   Off(motorDireita);
+   Off(motorEsquerda);
+}
+//////////////////
+//////////////////
+#define distancia_sensor SensorUS(IN_1)
+#define motorDireita OUT_B
+#define motorArma OUT_A
+#define motorEsquerda OUT_C
+
+void movimentoInicial();
+
+task main()
+{
+    SetSensorLowspeed(IN_1);
+    Wait(5000);
+    movimentoInicial();
+
+    while(true)
+    {
+        if(distancia_sensor < 25)                  // Se o robo ver o inimigo, ir pra frente
+        {
+           OnRev(motorDireita,100);
+           OnRev(motorEsquerda,100);
+        }
+        else
+        {                                          // Caso não localize o inimigo, girar para direita
+           OnFwd(motorDireita,50);
+           OnRev(motorEsquerda,50);
+        }
+    }
+}
+
+void movimentoInicial()
+{
+   OnFwd(motorArma,100);      //soltar a asa
+   OnRev(motorDireita, 100);
+   OnRev(motorEsquerda, 30);
+   Wait(500);
+   Off(motorArma);
+   Wait(700);
+   Off(motorDireita);
+   Off(motorEsquerda);
+}
+///////////////////
+///////////////////
+#define distancia_sensor SensorUS(IN_1)
+#define motorDireita OUT_B
+#define motorArma OUT_A
+#define motorEsquerda OUT_C
+
+void movimentoInicial();
+
+task main()
+{
+    SetSensorLowspeed(IN_1);
+    Wait(5000);
+    movimentoInicial();
+
+    while(true)
+    {
+        if(distancia_sensor < 25)                  // Se o robo ver o inimigo, ir pra frente
+        {
+           OnRev(motorDireita,100);
+           OnRev(motorEsquerda,100);
+        }
+        else
+        {                                          // Caso não localize o inimigo, girar para esquerda
+           OnRev(motorDireita,50);
+           OnFwd(motorEsquerda,50);
+        }
+    }
+}
+
+void movimentoInicial()
+{
+   OnFwd(motorArma,100);      //descer a rampa
+   OnRev(motorDireita, 30);
+   OnRev(motorEsquerda, 100);
+   Wait(500);
+   Off(motorArma);
+   Wait(700);
+   Off(motorDireita);
+   Off(motorEsquerda);
+}
